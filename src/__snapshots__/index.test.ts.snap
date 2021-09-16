@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`foo works 1`] = `
+Object {
+  "a": "a",
+  "b": 1,
+  "c": true,
+  "d": 2020-01-01T15:00:00.000Z,
+  "e": null,
+  "f": undefined,
+  "g": 10,
+}
+`;
