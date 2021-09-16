@@ -50,20 +50,6 @@ async function startServer(middleware?: Middleware) {
 }
 type Middleware = (...args: any) => void;
 
-async function restartServer(port: number, host: string, middleware?: Middleware) {
-  const httpServer = http.createServer();
-  const io = new Server(httpServer);
-  if (middleware) {
-    io.use(middleware);
-  }
-
-  return new Promise<Server>((resolve) => {
-    httpServer.listen(port, host, () => {
-      resolve(io);
-    });
-  });
-}
-
 async function waitUntilConnected(socket: Socket) {
   return new Promise<void>((resolve) => {
     socket.once('connect', () => {
